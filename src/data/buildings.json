@@ -1,95 +1,684 @@
-[
+{
+  "buildings": [
     {
-        "id": 1,
-        "name": "Morisset Library (MRT)",
-        "type": "Library",
-        "coordinates": {
-            "lat": 45.42318, 
-            "lng": -75.68419
-        }
+      "id": 1,
+      "name": "Tabaret Hall",
+      "abbreviation": "TBT",
+      "description": "Historic administration hub of the University, built in 1905 after a fire destroyed the original. First fireproof building in Canada made of reinforced concrete.",
+      "type": ["Academic", "Administrative"],
+      "coordinates": {
+        "lat": 45.424581,
+        "lng": -75.686410
+      },
+      "address": "550 Cumberland St, Ottawa, ON K1N 6N8",
+      "campus": "Main",
+      "entrances": {
+        "count": 4
+      },
+      "floors": 4
     },
     {
-        "id": 2,
-        "name": "Tabaret Hall (TBT)",
-        "type": "Student Services",
-        "coordinates": {
-            "lat": 45.42444,
-            "lng": -75.68606
-        }
+      "id": 2,
+      "name": "Morisset Hall",
+      "abbreviation": "MRT",
+      "description": "Main library building housing nearly 6 million titles, named after Father Auguste Morisset, Chief Librarian from 1934-1958.",
+      "type": ["Library", "Academic"],
+      "coordinates": {
+        "lat": 45.42318,
+        "lng": -75.68419
+      },
+      "address": "65 University Private, Ottawa, ON K1N 6N5",
+      "campus": "Main",
+      "entrances": {
+        "count": 4
+      },
+      "floors": 6
     },
     {
-        "id": 3,
-        "name": "Desmarais Hall (DMS)",
-        "type": "Academic",
-        "coordinates": {
-            "lat": 45.42407,
-            "lng": -75.68703
-        }
+      "id": 3,
+      "name": "S.I.T.E. Building",
+      "abbreviation": "STE",
+      "description": "School of Information Technology and Engineering building, inaugurated in 2002. Features a 6-story atrium with solar-heat recycling and state-of-the-art systems.",
+      "type": ["Academic", "Engineering"],
+      "coordinates": {
+        "lat": 45.4196,
+        "lng": -75.6831
+      },
+      "address": "800 King Edward Avenue, Ottawa, ON K1N 6N5",
+      "campus": "Main",
+      "entrances": {
+        "count": 3
+      },
+      "floors": 6
     },
     {
-        "id": 4,
-        "name": "SITE Building (STE)",
-        "type": "Academic",
-        "coordinates": {
-            "lat": 45.42229,
-            "lng": -75.68174
-        }
+      "id": 4,
+      "name": "Social Sciences Building",
+      "abbreviation": "FSS",
+      "description": "Houses the Faculty of Social Sciences with modern classrooms and research facilities.",
+      "type": ["Academic"],
+      "coordinates": {
+        "lat": 45.4205,
+        "lng": -75.6845
+      },
+      "address": "120 University Private, Ottawa, ON K1N 6N5",
+      "campus": "Main",
+      "entrances": {
+        "count": 3
+      },
+      "floors": 12
     },
     {
-        "id": 5,
-        "name": "STEM Complex (STM)",
-        "type": "Academic",
-        "coordinates": {
-            "lat": 45.42195,
-            "lng": -75.68270
-        }
+      "id": 5,
+      "name": "Desmarais Hall",
+      "abbreviation": "DMS",
+      "description": "Home to the Telfer School of Management and various social science programs.",
+      "type": ["Academic", "Business"],
+      "coordinates": {
+        "lat": 45.4218,
+        "lng": -75.6823
+      },
+      "address": "55 Laurier Avenue East, Ottawa, ON K1N 6N5",
+      "campus": "Main",
+      "entrances": {
+        "count": 4
+      },
+      "floors": 10
     },
     {
-        "id": 6,
-        "name": "Colonel By Hall (CBY)",
-        "type": "Academic",
-        "coordinates": {
-            "lat": 45.42274,
-            "lng": -75.68217
-        }
+      "id": 6,
+      "name": "Fauteux Hall",
+      "abbreviation": "FTX",
+      "description": "Houses the Faculty of Law and the Brian Dickson Law Library.",
+      "type": ["Academic", "Law"],
+      "coordinates": {
+        "lat": 45.4226,
+        "lng": -75.6818
+      },
+      "address": "57 Louis-Pasteur Private, Ottawa, ON K1N 6N5",
+      "campus": "Main",
+      "entrances": {
+        "count": 3
+      },
+      "floors": 7
     },
     {
-        "id": 7,
-        "name": "Learning Crossroads (CRX)",
-        "type": "Academic",
-        "coordinates": {
-            "lat": 45.42413,
-            "lng": -75.68361
-        }
+      "id": 7,
+      "name": "Pérez Hall",
+      "abbreviation": "PRZ",
+      "description": "Multi-purpose academic building housing music facilities and the Isobel Firestone Music Library.",
+      "type": ["Academic", "Arts"],
+      "coordinates": {
+        "lat": 45.4227,
+        "lng": -75.6837
+      },
+      "address": "50 University Private, Ottawa, ON K1N 6N5",
+      "campus": "Main",
+      "entrances": {
+        "count": 3
+      },
+      "floors": 5
     },
     {
-        "id": 8,
-        "name": "University Centre (UCU)",
-        "type": "Student Services",
-        "coordinates": {
-            "lat": 45.42472,
-            "lng": -75.68391
-        }
+      "id": 8,
+      "name": "Montpetit Hall",
+      "abbreviation": "MNT",
+      "description": "Large academic building with lecture halls, gym facilities, and administrative offices.",
+      "type": ["Academic", "Recreation"],
+      "coordinates": {
+        "lat": 45.4223,
+        "lng": -75.6851
+      },
+      "address": "125 University Private, Ottawa, ON K1N 6N5",
+      "campus": "Main",
+      "entrances": {
+        "count": 5
+      },
+      "floors": 8
     },
     {
-        "id": 9,
-        "name": "Social Sciences Building (FSS)",
-        "type": "Academic",
-        "coordinates": {
-            "lat": 45.42445,
-            "lng": -75.68305
-        }
+      "id": 9,
+      "name": "Simard Hall",
+      "abbreviation": "SMD",
+      "description": "Academic building housing various faculties and research centers.",
+      "type": ["Academic"],
+      "coordinates": {
+        "lat": 45.4200,
+        "lng": -75.6865
+      },
+      "address": "60 University Private, Ottawa, ON K1N 6N5",
+      "campus": "Main",
+      "entrances": {
+        "count": 3
+      },
+      "floors": 9
     },
     {
-        "id": 10,
-        "name": "Fauteux Hall (FTX)",
-        "type": "Academic",
-        "coordinates": {
-            "lat": 45.42380,
-            "lng": -75.68244
-        }
+      "id": 10,
+      "name": "Roger-Guindon Hall",
+      "abbreviation": "RGN",
+      "description": "Health sciences campus building housing medical facilities and the Health Sciences Library.",
+      "type": ["Academic", "Medical"],
+      "coordinates": {
+        "lat": 45.4114,
+        "lng": -75.6751
+      },
+      "address": "451 Smyth Road, Ottawa, ON K1H 8M5",
+      "campus": "Roger Guindon",
+      "entrances": {
+        "count": 4
+      },
+      "floors": 6
+    },
+    {
+      "id": 11,
+      "name": "Lamoureux Hall",
+      "abbreviation": "LMX",
+      "description": "Modern academic building featuring the Learning Crossroads (Carrefour des apprentissages).",
+      "type": ["Academic"],
+      "coordinates": {
+        "lat": 45.4225,
+        "lng": -75.6842
+      },
+      "address": "145 Jean-Jacques-Lussier Private, Ottawa, ON K1N 6N5",
+      "campus": "Main",
+      "entrances": {
+        "count": 4
+      },
+      "floors": 7
+    },
+    {
+      "id": 12,
+      "name": "Marion Hall",
+      "abbreviation": "MRN",
+      "description": "Academic building with classrooms and faculty offices.",
+      "type": ["Academic"],
+      "coordinates": {
+        "lat": 45.4210,
+        "lng": -75.6835
+      },
+      "address": "140 Louis-Pasteur Private, Ottawa, ON K1N 6N5",
+      "campus": "Main",
+      "entrances": {
+        "count": 3
+      },
+      "floors": 6
+    },
+    {
+      "id": 13,
+      "name": "Vanier Hall",
+      "abbreviation": "VNR",
+      "description": "Academic and administrative building.",
+      "type": ["Academic", "Administrative"],
+      "coordinates": {
+        "lat": 45.4228,
+        "lng": -75.6848
+      },
+      "address": "136 Jean-Jacques-Lussier Private, Ottawa, ON K1N 6N5",
+      "campus": "Main",
+      "entrances": {
+        "count": 2
+      },
+      "floors": 5
+    },
+    {
+      "id": 14,
+      "name": "Colonel By Hall",
+      "abbreviation": "CBY",
+      "description": "Academic building connected to SITE via rooftop bridge.",
+      "type": ["Academic"],
+      "coordinates": {
+        "lat": 45.4200,
+        "lng": -75.6828
+      },
+      "address": "161 Louis-Pasteur Private, Ottawa, ON K1N 6N5",
+      "campus": "Main",
+      "entrances": {
+        "count": 3
+      },
+      "floors": 5
+    },
+    {
+      "id": 15,
+      "name": "D'Iorio Hall",
+      "abbreviation": "DIO",
+      "description": "Academic building with modern facilities.",
+      "type": ["Academic"],
+      "coordinates": {
+        "lat": 45.4217,
+        "lng": -75.6810
+      },
+      "address": "10 Marie-Curie Private, Ottawa, ON K1N 6N5",
+      "campus": "Main",
+      "entrances": {
+        "count": 3
+      },
+      "floors": 5
+    },
+    {
+      "id": 16,
+      "name": "STEM Complex",
+      "abbreviation": "STM",
+      "description": "State-of-the-art Science, Technology, Engineering and Mathematics building.",
+      "type": ["Academic", "Research"],
+      "coordinates": {
+        "lat": 45.4208,
+        "lng": -75.6822
+      },
+      "address": "150 Louis-Pasteur Private, Ottawa, ON K1N 6N5",
+      "campus": "Main",
+      "entrances": {
+        "count": 4
+      },
+      "floors": 10
+    },
+    {
+      "id": 17,
+      "name": "Hamelin Hall",
+      "abbreviation": "HMN",
+      "description": "Academic building with specialized facilities.",
+      "type": ["Academic"],
+      "coordinates": {
+        "lat": 45.4222,
+        "lng": -75.6815
+      },
+      "address": "70 Laurier Avenue East, Ottawa, ON K1N 6N5",
+      "campus": "Main",
+      "entrances": {
+        "count": 2
+      },
+      "floors": 4
+    },
+    {
+      "id": 18,
+      "name": "Minto Sports Complex",
+      "abbreviation": "MNO",
+      "description": "Main athletics and recreation facility for the university.",
+      "type": ["Recreation", "Athletic"],
+      "coordinates": {
+        "lat": 45.4188,
+        "lng": -75.6842
+      },
+      "address": "801 King Edward Avenue, Ottawa, ON K1N 6N5",
+      "campus": "Main",
+      "entrances": {
+        "count": 3
+      },
+      "floors": 3
+    },
+    {
+      "id": 19,
+      "name": "University Centre",
+      "abbreviation": "UCU",
+      "description": "Jock Turcot University Centre - student life hub with services and dining.",
+      "type": ["Student Services", "Dining"],
+      "coordinates": {
+        "lat": 45.4224,
+        "lng": -75.6838
+      },
+      "address": "85 University Private, Ottawa, ON K1N 6N5",
+      "campus": "Main",
+      "entrances": {
+        "count": 5
+      },
+      "floors": 3
+    },
+    {
+      "id": 20,
+      "name": "Thompson Residence",
+      "abbreviation": "THN",
+      "description": "Student residence building.",
+      "type": ["Residence"],
+      "coordinates": {
+        "lat": 45.4230,
+        "lng": -75.6855
+      },
+      "address": "45 University Private, Ottawa, ON K1N 6N5",
+      "campus": "Main",
+      "entrances": {
+        "count": 2
+      },
+      "floors": 8
+    },
+    {
+      "id": 21,
+      "name": "Stanton Residence",
+      "abbreviation": "STN",
+      "description": "Student residence building.",
+      "type": ["Residence"],
+      "coordinates": {
+        "lat": 45.4235,
+        "lng": -75.6860
+      },
+      "address": "100 University Private, Ottawa, ON K1N 6N5",
+      "campus": "Main",
+      "entrances": {
+        "count": 2
+      },
+      "floors": 10
+    },
+    {
+      "id": 22,
+      "name": "Brooks Residence",
+      "abbreviation": "BRS",
+      "description": "Student residence complex.",
+      "type": ["Residence"],
+      "coordinates": {
+        "lat": 45.4212,
+        "lng": -75.6808
+      },
+      "address": "100 Marie-Curie Private, Ottawa, ON K1N 6N5",
+      "campus": "Main",
+      "entrances": {
+        "count": 2
+      },
+      "floors": 6
+    },
+    {
+      "id": 23,
+      "name": "Hyman Soloway Residence",
+      "abbreviation": "HYS",
+      "description": "Modern student residence with suite-style living.",
+      "type": ["Residence"],
+      "coordinates": {
+        "lat": 45.4202,
+        "lng": -75.6815
+      },
+      "address": "157 Laurier Avenue East, Ottawa, ON K1N 6N5",
+      "campus": "Main",
+      "entrances": {
+        "count": 2
+      },
+      "floors": 12
+    },
+    {
+      "id": 24,
+      "name": "Rideau Residence",
+      "abbreviation": "RDU",
+      "description": "Student residence building.",
+      "type": ["Residence"],
+      "coordinates": {
+        "lat": 45.4240,
+        "lng": -75.6865
+      },
+      "address": "110 University Private, Ottawa, ON K1N 6N5",
+      "campus": "Main",
+      "entrances": {
+        "count": 2
+      },
+      "floors": 8
+    },
+    {
+      "id": 25,
+      "name": "Marchand Residence",
+      "abbreviation": "MRC",
+      "description": "Student residence with traditional dorm-style rooms.",
+      "type": ["Residence"],
+      "coordinates": {
+        "lat": 45.4218,
+        "lng": -75.6845
+      },
+      "address": "110 University Private, Ottawa, ON K1N 6N5",
+      "campus": "Main",
+      "entrances": {
+        "count": 2
+      },
+      "floors": 5
+    },
+    {
+      "id": 26,
+      "name": "Leblanc Residence",
+      "abbreviation": "LBC",
+      "description": "Student residence building.",
+      "type": ["Residence"],
+      "coordinates": {
+        "lat": 45.4207,
+        "lng": -75.6818
+      },
+      "address": "45 Louis-Pasteur Private, Ottawa, ON K1N 6N5",
+      "campus": "Main",
+      "entrances": {
+        "count": 2
+      },
+      "floors": 7
+    },
+    {
+      "id": 27,
+      "name": "90 University",
+      "abbreviation": "90U",
+      "description": "Residential complex with modern amenities.",
+      "type": ["Residence"],
+      "coordinates": {
+        "lat": 45.4225,
+        "lng": -75.6840
+      },
+      "address": "90 University Private, Ottawa, ON K1N 6N5",
+      "campus": "Main",
+      "entrances": {
+        "count": 3
+      },
+      "floors": 25
+    },
+    {
+      "id": 28,
+      "name": "Advanced Research Complex",
+      "abbreviation": "ARC",
+      "description": "State-of-the-art research facility for advanced scientific research.",
+      "type": ["Research"],
+      "coordinates": {
+        "lat": 45.4195,
+        "lng": -75.6818
+      },
+      "address": "25 Templeton Street, Ottawa, ON K1N 6N5",
+      "campus": "Main",
+      "entrances": {
+        "count": 2
+      },
+      "floors": 3
+    },
+    {
+      "id": 29,
+      "name": "Biosciences Complex",
+      "abbreviation": "BSC",
+      "description": "Research and teaching facility for biological sciences.",
+      "type": ["Academic", "Research"],
+      "coordinates": {
+        "lat": 45.4220,
+        "lng": -75.6803
+      },
+      "address": "30 Marie-Curie Private, Ottawa, ON K1N 6N5",
+      "campus": "Main",
+      "entrances": {
+        "count": 3
+      },
+      "floors": 4
+    },
+    {
+      "id": 30,
+      "name": "100 Laurier",
+      "abbreviation": "100L",
+      "description": "Academic and administrative building.",
+      "type": ["Academic", "Administrative"],
+      "coordinates": {
+        "lat": 45.4216,
+        "lng": -75.6800
+      },
+      "address": "100 Laurier Avenue East, Ottawa, ON K1N 6N5",
+      "campus": "Main",
+      "entrances": {
+        "count": 2
+      },
+      "floors": 8
+    },
+    {
+      "id": 31,
+      "name": "100 Marie-Curie",
+      "abbreviation": "100MC",
+      "description": "University building with various facilities.",
+      "type": ["Academic"],
+      "coordinates": {
+        "lat": 45.4215,
+        "lng": -75.6805
+      },
+      "address": "100 Marie-Curie Private, Ottawa, ON K1N 6N5",
+      "campus": "Main",
+      "entrances": {
+        "count": 2
+      },
+      "floors": 6
+    },
+    {
+      "id": 32,
+      "name": "University of Ottawa Press",
+      "abbreviation": "99",
+      "description": "University publishing house and offices.",
+      "type": ["Administrative"],
+      "coordinates": {
+        "lat": 45.4183,
+        "lng": -75.6943
+      },
+      "address": "99 Bank Street, Ottawa, ON K1P 6B9",
+      "campus": "99 Bank",
+      "entrances": {
+        "count": 1
+      },
+      "floors": 3
+    },
+    {
+      "id": 33,
+      "name": "200 Lees",
+      "abbreviation": "200L",
+      "description": "Building at Lees campus location.",
+      "type": ["Academic"],
+      "coordinates": {
+        "lat": 45.4150,
+        "lng": -75.6750
+      },
+      "address": "200 Lees Avenue, Ottawa, ON K1S 5J3",
+      "campus": "Lees",
+      "entrances": {
+        "count": 2
+      },
+      "floors": 5
+    },
+    {
+      "id": 34,
+      "name": "Hagen Hall",
+      "abbreviation": "HGN",
+      "description": "Historic university building.",
+      "type": ["Academic"],
+      "coordinates": {
+        "lat": 45.4220,
+        "lng": -75.6825
+      },
+      "address": "115 Séraphin-Marion Private, Ottawa, ON K1N 6N5",
+      "campus": "Main",
+      "entrances": {
+        "count": 2
+      },
+      "floors": 4
+    },
+    {
+      "id": 35,
+      "name": "Séraphin-Marion Buildings",
+      "abbreviation": "SMN",
+      "description": "Academic buildings complex.",
+      "type": ["Academic"],
+      "coordinates": {
+        "lat": 45.4219,
+        "lng": -75.6827
+      },
+      "address": "Séraphin-Marion Private, Ottawa, ON K1N 6N5",
+      "campus": "Main",
+      "entrances": {
+        "count": 3
+      },
+      "floors": 5
+    },
+    {
+      "id": 36,
+      "name": "Jock Turcot Centre",
+      "abbreviation": "JTC",
+      "description": "Part of the University Centre complex.",
+      "type": ["Student Services"],
+      "coordinates": {
+        "lat": 45.4223,
+        "lng": -75.6839
+      },
+      "address": "85 University Private, Ottawa, ON K1N 6N5",
+      "campus": "Main",
+      "entrances": {
+        "count": 3
+      },
+      "floors": 3
+    },
+    {
+      "id": 37,
+      "name": "Alex Trebek Alumni Hall",
+      "abbreviation": "ATH",
+      "description": "Alumni relations and events building, named after famous uOttawa graduate Alex Trebek.",
+      "type": ["Administrative", "Events"],
+      "coordinates": {
+        "lat": 45.4213,
+        "lng": -75.6832
+      },
+      "address": "157 Séraphin-Marion Private, Ottawa, ON K1N 6N5",
+      "campus": "Main",
+      "entrances": {
+        "count": 2
+      },
+      "floors": 3
+    },
+    {
+      "id": 38,
+      "name": "MacDonald Hall",
+      "abbreviation": "MCD",
+      "description": "Academic building with classrooms and offices.",
+      "type": ["Academic"],
+      "coordinates": {
+        "lat": 45.4232,
+        "lng": -75.6870
+      },
+      "address": "540 King Edward Avenue, Ottawa, ON K1N 6N5",
+      "campus": "Main",
+      "entrances": {
+        "count": 2
+      },
+      "floors": 4
+    },
+    {
+      "id": 39,
+      "name": "Power Plant",
+      "abbreviation": "PWP",
+      "description": "Central heating and cooling facility for campus.",
+      "type": ["Facilities"],
+      "coordinates": {
+        "lat": 45.4198,
+        "lng": -75.6855
+      },
+      "address": "University Private, Ottawa, ON K1N 6N5",
+      "campus": "Main",
+      "entrances": {
+        "count": 1
+      },
+      "floors": 2
+    },
+    {
+      "id": 40,
+      "name": "Facilities Building",
+      "abbreviation": "FAC",
+      "description": "Campus facilities and maintenance services headquarters.",
+      "type": ["Facilities"],
+      "coordinates": {
+        "lat": 45.4190,
+        "lng": -75.6860
+      },
+      "address": "University Private, Ottawa, ON K1N 6N5",
+      "campus": "Main",
+      "entrances": {
+        "count": 2
+      },
+      "floors": 2
     }
-
-
-
-]
+  ]
+}
