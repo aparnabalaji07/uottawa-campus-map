@@ -1,55 +1,62 @@
 import Head from 'next/head';
-
 import Layout from '@components/Layout';
 import Section from '@components/Section';
 import Container from '@components/Container';
-import Map from '@components/Map';
-import Button from '@components/Button';
-
+import Map from '@components/Map';  // This already exists in your project
 import styles from '@styles/Home.module.scss';
+import buildingsData from '@/data/buildings.json';  // Your buildings data
 
-const DEFAULT_CENTER = [45.4231, -75.6831]
+const DEFAULT_CENTER = [45.4235, -75.684];
 
 export default function Home() {
+  const buildings = buildingsData.buildings;
+  
   return (
     <Layout>
       <Head>
-        <title>Next.js Leaflet Starter</title>
-        <meta name="description" content="Create mapping apps with Next.js Leaflet Starter" />
-        <link rel="icon" href="/faveicon.ico" />
+        <title>uOttawa Campus Map</title>
+        <meta name="description" content="University of Ottawa Campus Buildings Map" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
-
+      
       <Section>
         <Container>
           <h1 className={styles.title}>
-            Next.js Leaflet Starter
+            University of Ottawa Campus Map
           </h1>
-
-          <Map className={styles.homeMap} width="800" height="400" center={DEFAULT_CENTER} zoom={16}>
+          
+          <Map 
+            className={styles.homeMap} 
+            width="100%" 
+            height="600px" 
+            center={DEFAULT_CENTER} 
+            zoom={16}
+          >
             {({ TileLayer, Marker, Popup }) => (
               <>
                 <TileLayer
                   url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                  attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
+                  attribution="&copy; <a href='http://osm.org/copyright'>OpenStreetMap</a> contributors"
                 />
-                <Marker position={DEFAULT_CENTER}>
-                  <Popup>
-                    A pretty CSS3 popup. <br /> Easily customizable.
-                  </Popup>
-                </Marker>
+                {buildings.map((b) => (
+                  <Marker 
+                    key={b.id} 
+                    position={[b.coordinates.lat, b.coordinates.lng]}
+                  >
+                    <Popup>
+                      <strong>{b.name} ({b.abbreviation})</strong>
+                      <br />
+                      {b.type.join(", ")}
+                      <br />
+                      <small>{b.address}</small>
+                    </Popup>
+                  </Marker>
+                ))}
               </>
             )}
           </Map>
-
-          <p className={styles.description}>
-            <code className={styles.code}>npx create-next-app -e https://github.com/colbyfayock/next-leaflet-starter</code>
-          </p>
-
-          <p className={styles.view}>
-            <Button href="https://github.com/colbyfayock/next-leaflet-starter">Vew on GitHub</Button>
-          </p>
         </Container>
       </Section>
     </Layout>
-  )
+  );
 }
