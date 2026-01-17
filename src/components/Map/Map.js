@@ -1,22 +1,33 @@
-import dynamic from 'next/dynamic';
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import 'leaflet/dist/leaflet.css';
+import data from '@/data/buildings.json';
 
-const DynamicMap = dynamic(() => import('./DynamicMap'), {
-  ssr: false
-});
+const buildings = data.buildings;
 
-// Set default sizing to control aspect ratio which will scale responsively
-// but also help avoid layout shift
-
-const DEFAULT_WIDTH = 600;
-const DEFAULT_HEIGHT = 600;
-
-const Map = (props) => {
-  const { width = DEFAULT_WIDTH, height = DEFAULT_HEIGHT } = props;
+const Map = () => {
   return (
-    <div style={{ aspectRatio: width / height }}>
-      <DynamicMap {...props} />
-    </div>
-  )
-}
+    <MapContainer
+      center={[45.4215, -75.6972]}
+      zoom={15}
+      style={{ width: '100%', height: '600px' }}
+    >
+      <TileLayer
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+      />
+
+      {buildings.map((b) => (
+        <Marker
+          key={b.id}
+          position={[b.coordinates.lat, b.coordinates.lng]}
+        >
+          <Popup>
+            <strong>{b.name}</strong><br />
+            {b.type}
+          </Popup>
+        </Marker>
+      ))}
+    </MapContainer>
+  );
+};
 
 export default Map;
