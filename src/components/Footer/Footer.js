@@ -7,7 +7,12 @@ const Footer = ({ ...rest }) => {
     <footer className={styles.footer} {...rest}>
       <Container className={`${styles.footerContainer} ${styles.footerLegal}`}>
         <p>
-          &copy; <a href="https://spacejelly.dev">Next.js Leaflet Starter</a>, {new Date().getFullYear()}
+          &copy; 
+          <b>
+            <i>
+              uOttaHack - Aparna, Kali, Yasmine & Andri {new Date().getFullYear()}
+            </i>
+          </b>
         </p>
       </Container>
     </footer>
