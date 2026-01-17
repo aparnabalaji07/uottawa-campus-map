@@ -6,7 +6,7 @@ import Map from '@components/Map';
 import styles from '@styles/Home.module.scss';
 import buildingsData from '@/data/buildings.json'; 
 
-const DEFAULT_CENTER = [45.4222, -75.6824];
+const DEFAULT_CENTER = [45.4240, -75.6835];
 
 export default function Home() {
   const buildings = buildingsData.buildings;
