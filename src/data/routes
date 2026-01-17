@@ -1,0 +1,11 @@
+export const ROUTES = {
+  outdoor: {
+    label: "Walk – Outdoor",
+    distance: "700m",
+    time: "9 minutes",
+    coordinates: [
+      [-75.6831, 45.4231], // CRX
+      [-75.6819, 45.4224],
+      [-75.6806, 45.4218], // UCU
+    ],
+  },
