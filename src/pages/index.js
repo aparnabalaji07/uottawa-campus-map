@@ -16,7 +16,7 @@ export default function Home() {
       <Head>
         <title>Next.js Leaflet Starter</title>
         <meta name="description" content="Create mapping apps with Next.js Leaflet Starter" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/faveicon.ico" />
       </Head>
 
       <Section>
@@ -25,7 +25,7 @@ export default function Home() {
             Next.js Leaflet Starter
           </h1>
 
-          <Map className={styles.homeMap} width="800" height="400" center={DEFAULT_CENTER} zoom={12}>
+          <Map className={styles.homeMap} width="800" height="400" center={DEFAULT_CENTER} zoom={16}>
             {({ TileLayer, Marker, Popup }) => (
               <>
                 <TileLayer
