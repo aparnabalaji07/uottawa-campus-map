@@ -2,6 +2,9 @@ import { useEffect } from 'react';
 import Leaflet from 'leaflet';
 import * as ReactLeaflet from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
+import buildings from "@/data/buildings.json";
+
+
 
 import styles from './Map.module.scss';
 
