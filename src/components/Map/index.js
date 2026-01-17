@@ -1,9 +1,10 @@
 import Map from "@/components/Map/DynamicMap";
-import buildings from "@/data/buildings.json";
+import buildingsData from "@/data/buildings.json";
 
-export default function HomePage(){
-    return (
-        <div style={{ width: "100%", height: "600px" }}>
+export default function HomePage() {
+  const buildings = buildingsData.buildings;
+  return (
+    <div style={{ width: "100%", height: "600px" }}>
       <Map center={[45.4235, -75.684]} zoom={16}>
         {(ReactLeaflet, Leaflet) => {
           const { Marker, Popup } = ReactLeaflet;
@@ -14,14 +15,14 @@ export default function HomePage(){
               position={[b.coordinates.lat, b.coordinates.lng]}
             >
               <Popup>
-                <strong>{b.name} ({b.code})</strong>
+                <strong>{b.name} ({b.abbreviation})</strong>
                 <br />
-                {b.type}
+                {b.type.join(", ")}
               </Popup>
             </Marker>
           ));
         }}
       </Map>
     </div>
-    )
+  )
 }
