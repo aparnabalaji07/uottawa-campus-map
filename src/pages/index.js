@@ -2,9 +2,9 @@ import Head from 'next/head';
 import Layout from '@components/Layout';
 import Section from '@components/Section';
 import Container from '@components/Container';
-import Map from '@components/Map';  // This already exists in your project
+import Map from '@components/Map';  
 import styles from '@styles/Home.module.scss';
-import buildingsData from '@/data/buildings.json';  // Your buildings data
+import buildingsData from '@/data/buildings.json'; 
 
 const DEFAULT_CENTER = [45.4235, -75.684];
 
