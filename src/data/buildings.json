@@ -1,8 +1,95 @@
 [
     {
         "id": 1,
-        "name": "Morisset Library",
-        "type": "Library:",
-        "coordinates": [45.4231, -75.6831]
+        "name": "Morisset Library (MRT)",
+        "type": "Library",
+        "coordinates": {
+            "lat": 45.42318, 
+            "lng": -75.68419
+        }
+    },
+    {
+        "id": 2,
+        "name": "Tabaret Hall (TBT)",
+        "type": "Student Services",
+        "coordinates": {
+            "lat": 45.42444,
+            "lng": -75.68606
+        }
+    },
+    {
+        "id": 3,
+        "name": "Desmarais Hall (DMS)",
+        "type": "Academic",
+        "coordinates": {
+            "lat": 45.42407,
+            "lng": -75.68703
+        }
+    },
+    {
+        "id": 4,
+        "name": "SITE Building (STE)",
+        "type": "Academic",
+        "coordinates": {
+            "lat": 45.42229,
+            "lng": -75.68174
+        }
+    },
+    {
+        "id": 5,
+        "name": "STEM Complex (STM)",
+        "type": "Academic",
+        "coordinates": {
+            "lat": 45.42195,
+            "lng": -75.68270
+        }
+    },
+    {
+        "id": 6,
+        "name": "Colonel By Hall (CBY)",
+        "type": "Academic",
+        "coordinates": {
+            "lat": 45.42274,
+            "lng": -75.68217
+        }
+    },
+    {
+        "id": 7,
+        "name": "Learning Crossroads (CRX)",
+        "type": "Academic",
+        "coordinates": {
+            "lat": 45.42413,
+            "lng": -75.68361
+        }
+    },
+    {
+        "id": 8,
+        "name": "University Centre (UCU)",
+        "type": "Student Services",
+        "coordinates": {
+            "lat": 45.42472,
+            "lng": -75.68391
+        }
+    },
+    {
+        "id": 9,
+        "name": "Social Sciences Building (FSS)",
+        "type": "Academic",
+        "coordinates": {
+            "lat": 45.42445,
+            "lng": -75.68305
+        }
+    },
+    {
+        "id": 10,
+        "name": "Fauteux Hall (FTX)",
+        "type": "Academic",
+        "coordinates": {
+            "lat": 45.42380,
+            "lng": -75.68244
+        }
     }
+
+
+
 ]
