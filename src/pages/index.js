@@ -31,17 +31,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       
-      {/* Navigation Section */}
-      <Section>
-        <Container>
-          <h1 className={styles.title}>
-            University of Ottawa Campus
-          </h1>
-          
-        </Container>
-      </Section>
-
-      <CampusNavigation />
+      
 
       {/* Map Section */}
       <Section>
@@ -77,8 +67,16 @@ export default function Home() {
               </>
             )}
           </Map>
+          
         </Container>
+
+        
       </Section>
+
+      {/* Navigation Section */}
+      
+
+      <CampusNavigation />
     </Layout>
   );
 }
