@@ -6,25 +6,12 @@ import Container from '@components/Container';
 import styles from '@styles/Home.module.scss';
 import buildingsData from '../data/buildings.json';
 
-// Import Map with SSR disabled
+// Dynamic imports
 const Map = dynamic(() => import('@components/Map'), {
   ssr: false,
   loading: () => <p>Loading map...</p>
 });
 
-// Import CampusNavigation with SSR disabled
-const CampusNavigation = dynamic(() => import('@components/CampusNavigation'), {
-  ssr: false,
-  loading: () => <p>Loading navigation...</p>
-});
-
-// Import Map with SSR disabled
-const Map = dynamic(() => import('@components/Map'), {
-  ssr: false,
-  loading: () => <p>Loading map...</p>
-});
-
-// Import CampusNavigation with SSR disabled
 const CampusNavigation = dynamic(() => import('@components/CampusNavigation'), {
   ssr: false,
   loading: () => <p>Loading navigation...</p>
@@ -34,7 +21,7 @@ const DEFAULT_CENTER = [45.4240, -75.6835];
 
 export default function Home() {
   const buildings = buildingsData.buildings;
-  
+
   return (
     <Layout>
       <Head>
@@ -42,21 +29,14 @@ export default function Home() {
         <meta name="description" content="University of Ottawa Campus Buildings Map" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      
+
       {/* Navigation Section */}
       <Section>
         <Container>
-          <h1 className={styles.title}>
-            University of Ottawa Campus
-          </h1>
+          <h1 className={styles.title}>University of Ottawa Campus</h1>
           <CampusNavigation />
         </Container>
       </Section>
-
-      {/* Map Section */}
-      <Section>
-        <Container>
-      
 
       {/* Map Section */}
       <Section>
@@ -92,16 +72,8 @@ export default function Home() {
               </>
             )}
           </Map>
-          
         </Container>
-
-        
       </Section>
-
-      {/* Navigation Section */}
-      
-
-      <CampusNavigation />
     </Layout>
   );
 }
