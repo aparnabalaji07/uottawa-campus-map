@@ -23,7 +23,7 @@ const DEFAULT_CENTER = [45.4240, -75.6835];
 
 export default function Home() {
   const buildings = buildingsData.buildings;
-  
+
   return (
     <Layout>
       <Head>
@@ -31,7 +31,7 @@ export default function Home() {
         <meta name="description" content="University of Ottawa Campus Buildings Map" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      
+
       {/* Navigation Section */}
       <Section>
         <Container>
@@ -79,14 +79,13 @@ export default function Home() {
               </>
             )}
           </Map>
-          
         </Container>
-
-        
       </Section>
 
       {/* Navigation Section */}
       
+
+  
     </Layout>
   );
 }
