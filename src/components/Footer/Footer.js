@@ -10,7 +10,7 @@ const Footer = ({ ...rest }) => {
           &copy; 
           <b>
             <i>
-              uOttaHack - Aparna, Kali, Yasmine & Andri {new Date().getFullYear()}
+              uOttaHack - Aparna, Kali and Yasmine {new Date().getFullYear()}
             </i>
           </b>
         </p>
