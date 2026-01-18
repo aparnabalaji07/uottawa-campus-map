@@ -1,20 +1,42 @@
 export default async function handler(req, res) {
-  const { start, end } = req.query;
-
-  const apiKey = process.env.GOOGLE_API_KEY;
+  if (req.method !== 'POST') {
+    return res.status(405).json({ error: 'Method not allowed' });
+  }
 
   try {
-    const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${apiKey}`,
+    const { startLocation, destination } = req.body;
+
+    if (!startLocation || !destination) {
+      return res.status(400).json({ error: 'Missing locations' });
+    }
+
+    const geminiResponse = await fetch(
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${process.env.GOOGLE_API_KEY}`,
       {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+        },
         body: JSON.stringify({
           contents: [
             {
               parts: [
                 {
-                  text: `You are a campus navigation assistant for the University of Ottawa. Provide clear, step-by-step walking directions from ${start} to ${end} on the uOttawa campus in Ottawa, Canada.`
+                  text: `
+You are a campus navigation assistant for the University of Ottawa.
+
+Give clear, step-by-step walking directions from
+${startLocation} to ${destination}.
+
+Include:
+- Approximate walking time
+- Landmarks
+- Turn-by-turn directions
+- Indoor tunnels or passageways if applicable
+- Floor numbers if relevant
+
+Format as a numbered list.
+                  `.trim()
                 }
               ]
             }
@@ -23,15 +45,14 @@ export default async function handler(req, res) {
       }
     );
 
-    const data = await response.json();
-    console.log('Google API raw response:', JSON.stringify(data, null, 2));
+    const data = await geminiResponse.json();
 
-    // Extract directions text safely
-    const directions = data.candidates?.[0]?.content?.parts?.[0]?.text || "No directions returned.";
+    const text =
+      data.candidates?.[0]?.content?.parts?.[0]?.text ?? null;
 
-    res.status(200).json({ directions });
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: err.message });
+    return res.status(200).json({ text });
+  } catch (error) {
+    console.error('Gemini API error:', error);
+    return res.status(500).json({ error: 'Failed to get directions' });
   }
 }
