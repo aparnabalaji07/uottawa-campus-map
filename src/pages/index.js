@@ -18,17 +18,6 @@ const CampusNavigation = dynamic(() => import('@components/CampusNavigation'), {
   loading: () => <p>Loading navigation...</p>
 });
 
-// Import Map with SSR disabled
-const Map = dynamic(() => import('@components/Map'), {
-  ssr: false,
-  loading: () => <p>Loading map...</p>
-});
-
-// Import CampusNavigation with SSR disabled
-const CampusNavigation = dynamic(() => import('@components/CampusNavigation'), {
-  ssr: false,
-  loading: () => <p>Loading navigation...</p>
-});
 
 const DEFAULT_CENTER = [45.4240, -75.6835];
 
@@ -53,9 +42,7 @@ export default function Home() {
         </Container>
       </Section>
 
-      {/* Map Section */}
-      <Section>
-        <Container>
+  
       
 
       {/* Map Section */}
@@ -100,8 +87,6 @@ export default function Home() {
 
       {/* Navigation Section */}
       
-
-      <CampusNavigation />
     </Layout>
   );
 }
