@@ -10,7 +10,7 @@ export default function NavigationPage() {
       <CampusNavigation />
     </Layout>
   );
-}
+};
 
 const Layout = ({ children }) => {
   return (
