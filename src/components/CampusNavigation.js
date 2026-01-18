@@ -57,6 +57,43 @@ Keep directions concise but helpful. If you don't know the exact route, provide 
       });
 
       const data = await response.json();
+      const apiKey = process.env.GOOGLE_API_KEY;
+      const response = await fetch( `/api/directions?start=${encodeURIComponent(startLocation)}&end=${encodeURIComponent(destination)}`,
+        {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({
+    contents: [
+      {
+        parts: [
+          {
+            text: `You are a campus navigation assistant for the University of Ottawa. Provide clear, step-by-step walking directions from ${startLocation} to ${destination} on the uOttawa campus in Ottawa, Canada. 
+
+              Include tunnels, passageways, or indoor routes wherever needed. Descriptively indicate which floors to go to reach these tunnels or passageways.
+
+              Format your response as a numbered list with detailed walking instructions. Include:
+              - Approximate walking time
+              - Specific landmarks to look for
+              - Turn-by-turn directions
+              - Building entrance information if relevant
+              - Floor information to access tunnels/passages
+              Keep directions concise but helpful. If you don't know the exact route, provide the best general guidance based on typical campus layouts.`
+          }
+        ]
+      }
+    ]
+  }),
+});
+
+
+        
+
+      const data = await response.json();
+      console.log('Google API raw response:', JSON.stringify(data, null, 2));
+      res.status(200).json(data);
+
       
       if (data.candidates && data.candidates[0]?.content?.parts[0]?.text) {
         setDirections(data.candidates[0].content.parts[0].text);

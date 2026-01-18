@@ -1,22 +1,49 @@
-import dynamic from 'next/dynamic';
+import { useEffect } from 'react';
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import Leaflet from 'leaflet';
+import 'leaflet/dist/leaflet.css';
+import data from '@/data/buildings.json';
 
-const DynamicMap = dynamic(() => import('./DynamicMap'), {
-  ssr: false
-});
+const buildings = data.buildings;
 
-// Set default sizing to control aspect ratio which will scale responsively
-// but also help avoid layout shift
+const Map = () => {
+  // Fix for Leaflet marker icons in Next.js
+  useEffect(() => {
+    delete Leaflet.Icon.Default.prototype._getIconUrl;
+    Leaflet.Icon.Default.mergeOptions({
+      iconRetinaUrl:
+        'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png',
+      iconUrl:
+        'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
+      shadowUrl:
+        'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
+    });
+  }, []);
 
-const DEFAULT_WIDTH = 600;
-const DEFAULT_HEIGHT = 600;
-
-const Map = (props) => {
-  const { width = DEFAULT_WIDTH, height = DEFAULT_HEIGHT } = props;
   return (
-    <div style={{ aspectRatio: width / height }}>
-      <DynamicMap {...props} />
-    </div>
-  )
-}
+    <MapContainer
+      center={[45.4215, -75.6824]} // slightly moved right from original
+      zoom={16}
+      style={{ width: '100%', height: '600px' }}
+    >
+      <TileLayer
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        attribution="&copy; OpenStreetMap contributors"
+      />
+
+      {buildings.map((b) => (
+        <Marker
+          key={b.id}
+          position={[b.coordinates.lat, b.coordinates.lng]}
+        >
+          <Popup>
+            <strong>{b.name}</strong><br />
+            {b.type.join(', ')}
+          </Popup>
+        </Marker>
+      ))}
+    </MapContainer>
+  );
+};
 
 export default Map;
