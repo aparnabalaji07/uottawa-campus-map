@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Search, Navigation, Loader2, MapPin } from 'lucide-react';
 
-
 export default function CampusNavigation() {
   const [startLocation, setStartLocation] = useState('');
   const [destination, setDestination] = useState('');
@@ -35,22 +34,27 @@ export default function CampusNavigation() {
     setDirections(null);
 
     try {
-      // ⛔ TEMPORARY MOCK RESPONSE (safe, single-file)
-      await new Promise(resolve => setTimeout(resolve, 1200));
+      const response = await fetch('/api/directions', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          startLocation,
+          destination,
+        }),
+      });
 
-      const mockDirections = `
-1. Start at ${startLocation}.
-2. Exit the building and orient yourself toward the main pedestrian pathway.
-3. Follow campus signage toward ${destination}.
-4. Pass notable landmarks along the way (student center, quad, or library).
-5. Enter ${destination} through the main entrance.
+      const data = await response.json();
 
-Approximate walking time: 5–10 minutes.
-`;
-
-      setDirections(mockDirections.trim());
+      if (response.ok && data.text) {
+        setDirections(data.text);
+      } else {
+        setError(data.error || 'Could not get directions.');
+      }
     } catch (err) {
-      setError('Something went wrong. Please try again.');
+      console.error(err);
+      setError('Error connecting to navigation service.');
     } finally {
       setLoading(false);
     }
@@ -81,13 +85,15 @@ Approximate walking time: 5–10 minutes.
               </label>
               <input
                 value={startLocation}
-                onChange={e => setStartLocation(e.target.value)}
+                onChange={(e) => setStartLocation(e.target.value)}
                 onKeyPress={handleKeyPress}
-                className="w-full px-4 py-3 border-2 rounded-lg"
+                className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg"
                 list="buildings-start"
               />
               <datalist id="buildings-start">
-                {buildings.map((b, i) => <option key={i} value={b} />)}
+                {buildings.map((b, i) => (
+                  <option key={i} value={b} />
+                ))}
               </datalist>
             </div>
 
@@ -98,13 +104,15 @@ Approximate walking time: 5–10 minutes.
               </label>
               <input
                 value={destination}
-                onChange={e => setDestination(e.target.value)}
+                onChange={(e) => setDestination(e.target.value)}
                 onKeyPress={handleKeyPress}
-                className="w-full px-4 py-3 border-2 rounded-lg"
+                className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg"
                 list="buildings-dest"
               />
               <datalist id="buildings-dest">
-                {buildings.map((b, i) => <option key={i} value={b} />)}
+                {buildings.map((b, i) => (
+                  <option key={i} value={b} />
+                ))}
               </datalist>
             </div>
 
@@ -117,18 +125,34 @@ Approximate walking time: 5–10 minutes.
             <button
               onClick={getDirections}
               disabled={loading}
-              className="w-full bg-red-600 text-white py-4 rounded-lg flex justify-center gap-2"
+              className="w-full bg-red-600 hover:bg-red-700 disabled:bg-gray-400 text-white py-4 rounded-lg flex justify-center gap-2"
             >
-              {loading ? <Loader2 className="animate-spin" /> : <Search />}
-              {loading ? 'Getting Directions…' : 'Get Directions'}
+              {loading ? (
+                <>
+                  <Loader2 className="animate-spin" />
+                  Getting Directions…
+                </>
+              ) : (
+                <>
+                  <Search />
+                  Get Directions
+                </>
+              )}
             </button>
           </div>
         </div>
 
         {directions && (
           <div className="bg-white rounded-2xl shadow-xl p-8">
-            <h2 className="text-xl font-bold mb-4">Walking Directions</h2>
-            <pre className="whitespace-pre-wrap">{directions}</pre>
+            <div className="flex items-center gap-3 mb-4">
+              <Navigation className="text-green-600" />
+              <h2 className="text-xl font-bold">Walking Directions</h2>
+            </div>
+
+            <pre className="whitespace-pre-wrap text-gray-800">
+              {directions}
+            </pre>
+
             <button
               onClick={clearDirections}
               className="mt-4 bg-gray-200 px-4 py-2 rounded"
