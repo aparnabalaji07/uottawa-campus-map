@@ -2,11 +2,15 @@ import Head from 'next/head';
 import Header from '@components/Header';
 import Footer from '@components/Footer';
 import CampusNavigation from '@components/CampusNavigation';
-   
-   export default function NavigationPage() {
-     return <CampusNavigation />;
-   }
 import styles from './Layout.module.scss';
+
+export default function NavigationPage() {
+  return (
+    <Layout>
+      <CampusNavigation />
+    </Layout>
+  );
+}
 
 const Layout = ({ children }) => {
   return (
@@ -15,13 +19,8 @@ const Layout = ({ children }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <main className={styles.main}>{children}
-        
-      </main>
-
+      <main className={styles.main}>{children}</main>
       <Footer />
     </div>
   );
 };
-
-export default Layout;
